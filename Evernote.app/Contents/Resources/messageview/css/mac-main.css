@@ -1,0 +1,169 @@
+/* Assigns background image with support for automatically handling retina.
+ * The @url given should be the part in square brackets:
+ * ../img/win-[filename].png
+ */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #ffffff;
+  font-family: helvetica, arial, sans-serif;
+  background-color: #fafafa;
+}
+#message-list {
+  padding: 0px 20px;
+}
+.message {
+  position: relative;
+  border-top: 1px solid #dedede;
+  padding: 20px 0px;
+  font-family: helvetica, arial, sans-serif;
+  padding: 15px 0px;
+  border-top: 0px;
+}
+.message .left-indent {
+  margin-left: 40px;
+  font-family: helvetica, arial, sans-serif;
+  margin-left: 56px;
+}
+.message:first-child {
+  border-width: 0px;
+}
+.message .imageCropper {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 20px;
+  left: 0px;
+  overflow: hidden;
+  background-size: 100%;
+  font-family: helvetica, arial, sans-serif;
+  width: 40px;
+  height: 40px;
+  top: 15px;
+  border-radius: 50%;
+}
+@media all {
+  .message .imageCropper.showBackground {
+    background-image: url("../img/mac-person-placeholder.png");
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .message .imageCropper.showBackground {
+    background-image: url("../img/mac-person-placeholder@2x.png");
+  }
+}
+.message .imageCropper .senderImage {
+  width: 26px;
+  opacity: 0;
+  width: 40px;
+}
+.message .senderName {
+  margin-left: 40px;
+  margin-left: 56px;
+  margin-bottom: 3px;
+  font-size: 12px;
+  color: #696969;
+  padding-right: 140px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 0px;
+  font-family: helvetica, arial, sans-serif;
+  color: #b4b4b4;
+}
+.message .body {
+  margin-left: 40px;
+  margin-left: 56px;
+  font-size: 14px;
+  color: #000000;
+  word-wrap: break-word;
+  font-family: helvetica, arial, sans-serif;
+  color: #4d4d4d;
+  padding-right: 75px;
+}
+.message .body a {
+  color: #00a9fc;
+}
+.message .sentAt {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  font-size: 12px;
+  color: #9e9e9e;
+  font-family: helvetica, arial, sans-serif;
+  top: 34px;
+  color: #b4b4b4;
+  text-align: right;
+  width: 70px;
+}
+.message .attachments {
+  margin-left: 40px;
+  margin-left: 56px;
+  font-family: helvetica, arial, sans-serif;
+  padding-right: 55px;
+}
+.attachment {
+  display: inline-block;
+  background-color: #f6f8f9;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  text-indent: 24px;
+  margin: 5px 5px 0px 0px;
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  font-family: helvetica, arial, sans-serif;
+  background-position: 0px center;
+  position: relative;
+  background-color: transparent;
+  border: 0px;
+  color: #66c4fa;
+  padding: 0px 10px 0px 0px;
+  background-size: 20px;
+  margin-right: 16px;
+}
+.attachment::after {
+  font-family: helvetica, arial, sans-serif;
+  position: absolute;
+  right: 0px;
+  top: 3px;
+  font-size: 10px;
+  content: "❯";
+}
+.attachment:first-child {
+  margin-top: 18px;
+}
+@media all {
+  .attachment.note {
+    background-image: url("../img/mac-note-icon.png");
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .attachment.note {
+    background-image: url("../img/mac-note-icon@2x.png");
+  }
+}
+@media all {
+  .attachment.notebook {
+    background-image: url("../img/mac-notebook-icon.png");
+  }
+}
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .attachment.notebook {
+    background-image: url("../img/mac-notebook-icon@2x.png");
+  }
+}
