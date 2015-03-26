@@ -1,0 +1,14 @@
+<h1>
+  Contact Us
+</h1>
+
+<!-- Using the syntax below will add security. Check Chrome Inspector. Notice that there is a randomly generated tag. -->
+
+<%= form_tag "/contact" do %>
+  <%= text_field_tag :full_name, "", placeholder: "Full Name" %>
+  <!-- This will generate id, type, and name attributes -->
+  <!-- The "" for sending blank to one of the parameters. See Rails documentation for parameters. -->
+  <p><%= email_field_tag :email, "", placeholder: "Email" %>
+  <p><%= text_area_tag :message, "", placeholder: "Your Message" %>
+  <p><%= submit_tag "Contact Us!" %>
+<% end %>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FirstApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ 
+  <%# This includes the javascript application manifest file which in returns includes all the files if it contains
+  require_tree . The file is located inside assets/javascripts/application.js %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- 
+  You can find the second parameter in http://localhost:3000/rails/info/routes 
+  The first parameter displays the text.
+  The second parameter is the URL.
+-->
+<%= link_to "Home", root_path %>
+<%= link_to "About", about_path, class: "header-link" %>
+<%= link_to "Contact", contact_path %>
+
+<%= yield %>
+
+</body>
+</html>
