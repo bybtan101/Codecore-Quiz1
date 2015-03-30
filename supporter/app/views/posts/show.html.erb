@@ -1,0 +1,9 @@
+<h1>Ticket Submitted By: &nbsp; <%= @post.name %></h1>
+
+<p>Email: &nbsp; <%= @post.email %></p>
+<p>Department: &nbsp; <%= @post.department %></p>
+<p>Ticket Details: &nbsp; <%= @post.message %></p>
+
+<%= link_to "Edit", edit_post_path(@post) %> &nbsp;
+<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure you wish to delete?"} %> &nbsp; 
+<%= link_to "Back To Dashboard", back_post_path(@post) %>

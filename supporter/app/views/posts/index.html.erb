@@ -1,0 +1,21 @@
+<h1>Support Requests</h1>
+
+<%= link_to "Create A New ticket", new_post_path %>
+<br>
+<ul><p>Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Email &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Department &nbsp; &nbsp; &nbsp; &nbsp; Message</p></ul>
+
+<hr>
+ <% @posts.each do |p| %>
+   <ul><p>
+   	<%= p.name %> &nbsp;
+   	<%= link_to p.email, post_path(p) %> &nbsp;
+   	<%= p.department %> &nbsp;
+   	<%= p.message %>
+   	&nbsp;
+   	<%= link_to "Edit", post_path(p) %>
+   	<%= link_to "Delete", method: :delete, data: {confirm: "Are you sure you wish to delete?"} %>
+   	<%= button_to "Completed" %>
+   </p></ul>
+<hr>
+
+<% end %>
